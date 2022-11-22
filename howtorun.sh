@@ -10,14 +10,6 @@ uwsgi \
         --py-autoreload 1
 
 
-INSERT INTO product_categories (id,name,description,created_at,modified_at)
-VALUES ('534207d4-cefd-4e73-b7f8-9a7a49eb3032', 'Electronics', 'Electronics', NOW(), NOW()),
-       ('46884850-1dc4-4f5f-b57a-608a48054d0b', 'Men', 'Men', NOW(), NOW()),
-       ('834aff63-dc8d-4dba-a821-188d277e3712', 'Baby & Kids', 'Baby & Kids', NOW(), NOW()),
-       ('df7a5ca1-e6ce-4f16-a5f9-8f447597d287', 'Home & Furniture', 'Home & Furniture', NOW(), NOW()),
-       ('bb867c13-f0b4-4779-8080-ca95be983e56', 'Sports, Books & More', 'Sports, Books & More', NOW(), NOW()),
-       ('393fc112-a17b-4674-93df-57f52037a2b6', 'Women', 'Women', NOW(), NOW());
-
 
 INSERT INTO product_subcategories (id,name,description,product_category_id,created_at,modified_at)
 VALUES ('e21cb0a9-1095-4dc7-8813-9ba752b1abad', 'Mobiles', 'Mobiles', '534207d4-cefd-4e73-b7f8-9a7a49eb3032', NOW(), NOW()),
@@ -47,6 +39,14 @@ VALUES ('e21cb0a9-1095-4dc7-8813-9ba752b1abad', 'Mobiles', 'Mobiles', '534207d4-
 	   ('955ce4de-e528-4d23-9d36-acc061be6930', 'Footwear', 'Footwear', '393fc112-a17b-4674-93df-57f52037a2b6', NOW(), NOW()),
 	   ('d1f8d593-af0f-485a-8d34-cdc012dd18d4', 'Jewellery', 'Jewellery', '393fc112-a17b-4674-93df-57f52037a2b6', NOW(), NOW()),
 	   ('78ef9252-7791-49f8-bfaf-62c3ab2ced18', 'Skin Care', 'Skin Care', '393fc112-a17b-4674-93df-57f52037a2b6', NOW(), NOW());
+	   
+INSERT INTO product_categories (id,name,description,created_at,modified_at)
+VALUES ('534207d4-cefd-4e73-b7f8-9a7a49eb3032', 'Electronics', 'Electronics', NOW(), NOW()),
+       ('46884850-1dc4-4f5f-b57a-608a48054d0b', 'Men', 'Men', NOW(), NOW()),
+       ('834aff63-dc8d-4dba-a821-188d277e3712', 'Baby & Kids', 'Baby & Kids', NOW(), NOW()),
+       ('df7a5ca1-e6ce-4f16-a5f9-8f447597d287', 'Home & Furniture', 'Home & Furniture', NOW(), NOW()),
+       ('bb867c13-f0b4-4779-8080-ca95be983e56', 'Sports, Books & More', 'Sports, Books & More', NOW(), NOW()),
+       ('393fc112-a17b-4674-93df-57f52037a2b6', 'Women', 'Women', NOW(), NOW());
 
 select sc.name,c.name from product_subcategories sc inner join  product_categories c on sc.product_category_id = c.id;
 
